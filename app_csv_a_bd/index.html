@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta etiqueta para definir el conjunto de caracteres -->
+    <meta charset="UTF-8">
+    <!-- Título de la página -->
+    <title>Importar CSV a Base de Datos</title>
+    <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Título principal de la página -->
+    <h1>Importar CSV a Base de Datos</h1>
+    <div class="container">
+        <!-- Formulario principal para subir el archivo CSV -->
+        <form id="main-form" action="importar.php" method="post" enctype="multipart/form-data">
+            <!-- Etiqueta y selector para la base de datos -->
+            <label for="database">Selecciona la base de datos:</label>
+            <select name="database" id="database" class="select-options">
+                <option value="">Selecciona una base de datos</option>
+                <!-- Las opciones de base de datos pueden ser llenadas dinámicamente -->
+            </select>
+            <br><br>
+            <!-- Etiqueta y selector para la tabla destino -->
+            <label for="table">Selecciona la tabla destino:</label>
+            <select name="table" id="table" class="select-options" disabled>
+                <option value="">Selecciona una tabla</option>
+            </select>
+            <br><br>
+            <!-- Botón para adjuntar archivo manualmente -->
+            <button type="button" onclick="document.getElementById('archivos').click()">Adjuntar Archivo</button>
+            <!-- Zona de arrastre y campo de entrada para seleccionar múltiples archivos -->
+            <div class="drag-and-drop" id="drop-zone">
+                <span id="drop-zone-text">Arrastra y suelta un archivo aquí o haz clic para seleccionarlo.</span>
+                <input type="file" name="archivos[]" id="archivos" multiple style="display: none;">
+            </div>
+            <br><br>
+            <!-- Botón para enviar el formulario -->
+            <input type="submit" value="Importar" class="import-button">
+        </form>
+        <br><br>
+        <!-- Sección de información para instrucciones -->
+        <div class="info">
+            <h2>Instrucciones Importantes</h2>
+            <p class="justificado"><strong>Sobre la llave primaria:</strong> La llave primaria será extraída directamente de la base de datos seleccionada, de está manera haciendo uso de la llave primaria se insertarán nuevos elementos o se actualizarán los elementos que tengan una llave primaria igual </p>
+            <p class="justificado"><strong>Encabezados de las columnas:</strong> Los encabezados de las columnas en tu archivo CSV deben coincidir exactamente con los nombres de las columnas en la base de datos para ser importados.</p>
+            <p class="justificado"><strong>Más columnas en el CSV que en la base de datos:</strong> Si tu archivo CSV tiene más columnas que la tabla de la base de datos, solo se importarán las columnas que coincidan con los nombres en la base de datos. Las columnas adicionales serán ignoradas.</p>
+        </div>
+        <!-- Pie de página con enlace a mi GitHub -->
+        <footer>
+            <a href="https://github.com/MrGL1TCH" target="_blank">Visita mi GitHub MrGL1TCH</a>
+        </footer>
+    </div>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

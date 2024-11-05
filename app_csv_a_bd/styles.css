@@ -1,0 +1,166 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Asegurar que el contenido comienza desde el principio */
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor centrado */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilo del título */
+h1 {
+    color: #e6e6e6;
+    margin-bottom: 30px;
+}
+
+/* Justificar texto */
+.justificado {
+    text-align: justify;
+}
+
+/* Estilo para enlaces */
+a {
+    color: #4a90e2; /* Color de los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+    transition: color 0.3s; /* Transición suave para el cambio de color */
+}
+
+a:hover {
+    color: #357abd; /* Color al pasar el ratón por encima */
+}
+
+a:active {
+    color: #1c1c1c; /* Color al hacer clic */
+}
+
+a:visited {
+    color: #4a90e2; /* Color de enlaces visitados */
+}
+
+
+/* Caja para arrastrar documentos */
+.drag-and-drop {
+    border: 2px dashed #4a90e2;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    background-color: #2a2a2a;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+    width: 83%; /* Más pequeño en ancho */
+    height: 85px; /* Más alto para simetría */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #f4f4f4;
+}
+.drag-and-drop:hover {
+    background-color: #353535;
+}
+
+/* Estilo para la lista de archivos subidos */
+.file-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 100px;
+    overflow-y: auto;
+}
+.file-list li {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #4a90e2;
+    color: #1c1c1c;
+    border-radius: 5px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ocultar el input de archivo real */
+.drag-and-drop input[type="file"] {
+    display: none;
+}
+
+/* Estilo de la barra de selección */
+.select-options {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Estilo del botón importar */
+.import-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.import-button:hover {
+    background-color: #357abd;
+}
+
+/* Estilo para la sección de información */
+.info {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Estilo para el pie de página */
+footer {
+    margin-top: 20px;
+    padding: 5px;
+    background-color: #1c1c1c;
+    color: #f4f4f4;
+    text-align: center;
+    border: 1px solid #4a90e2; /* Borde en todos los lados */
+    font-size: 12px;
+    width: 150px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px; /* Posición en el lado izquierdo */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .select-options, input[type="file"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .import-button {
+        font-size: 14px;
+    }
+}
